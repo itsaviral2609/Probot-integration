@@ -1,0 +1,25 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs every day at midnight (UTC)
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v8
+        with:
+          days-before-stale: 30           # Number of days of inactivity before marking as stale
+          days-before-close: 7            # Number of days to wait before closing stale issues/PRs
+          stale-issue-message: "This issue has been marked as stale due to inactivity. Please update if still relevant."
+          stale-pr-message: "This pull request has been marked as stale due to inactivity. Please update if still relevant."
+          close-issue-message: "Closing this issue as it is no longer active."
+          close-pr-message: "Closing this pull request as it is no longer active."
+          stale-issue-label: "stale"
+          stale-pr-label: "stale"
+          exempt-issue-labels: "hold"     # Do not mark issues with this label as stale
+          exempt-pr-labels: "hold"        # Do not mark PRs with this label as stale
+          only-labels: ""                 # Only consider issues/PRs with these labels (leave empty for all)
+          remove-stale-when-updated: true # Remove stale label if activity occurs

@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "0 0 * * *" # Runs every day at midnight (UTC)
   workflow_dispatch:
+permissions:
+  contents: write # only for delete-branch option
+  issues: write
+  pull-requests: write  
 
 jobs:
   stale:
@@ -11,8 +15,8 @@ jobs:
     steps:
       - uses: actions/stale@v8
         with:
-          days-before-stale: 30           # Number of days of inactivity before marking as stale
-          days-before-close: 7            # Number of days to wait before closing stale issues/PRs
+          days-before-stale: 5           # Number of days of inactivity before marking as stale
+          days-before-close: 2            # Number of days to wait before closing stale issues/PRs
           stale-issue-message: "This issue has been marked as stale due to inactivity. Please update if still relevant."
           stale-pr-message: "This pull request has been marked as stale due to inactivity. Please update if still relevant."
           close-issue-message: "Closing this issue as it is no longer active."

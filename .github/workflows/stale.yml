@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/stale@v8
         with:
-          days-before-stale: 30           # Number of days of inactivity before marking as stale
+          days-before-stale: 1           # Number of days of inactivity before marking as stale
           days-before-close: 7            # Number of days to wait before closing stale issues/PRs
           stale-issue-message: "This issue has been marked as stale due to inactivity. Please update if still relevant."
           stale-pr-message: "This pull request has been marked as stale due to inactivity. Please update if still relevant."

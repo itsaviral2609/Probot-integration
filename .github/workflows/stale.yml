@@ -15,10 +15,10 @@ jobs:
           stale-pr-message: "This pull request has been marked as stale due to inactivity. Please update if it is still relevant."
           stale-issue-label: "needs-attention"
           stale-pr-label: "needs-review"
-          days-before-issue-stale: 5        # Number of days of inactivity before marking issues as stale
-          days-before-pr-stale: 2          # Number of days of inactivity before marking PRs as stale
-          days-before-issue-close: -1        # Do not automatically close issues
-          days-before-pr-close: -1           # Do not automatically close PRs
+          days-before-issue-stale: 30        # Updated to 30 days before marking issues as stale
+          days-before-pr-stale: 30          # Updated to 30 days before marking PRs as stale
+          days-before-issue-close: 90       # Automatically close issues 90 days after being marked stale
+          days-before-pr-close: 90          # Automatically close PRs 90 days after being marked stale
           exempt-issue-labels: "hold,feature,in progress"  # Exempt these labels from being marked stale
           exempt-pr-labels: "hold"           # Exempt these labels from being marked stale
           remove-issue-stale-when-updated: true  # Remove stale label when issue is updated
